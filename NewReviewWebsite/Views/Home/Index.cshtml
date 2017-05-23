@@ -1,8 +1,11 @@
 ﻿@{
     ViewData["Title"] = "Home - MUSIC REVIEWS";
-}    
+}
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 
-<div id="site-content">
+@if (SignInManager.IsSignedIn(User)) {
+    <div id="site-content">
         <main class="main-content">
             <div class="container">
                 <div class="page">
@@ -56,11 +59,65 @@
                 </div>
             </div> <!-- .container -->
         </main>
-        
+
     </div>
-    <!-- Default snippet for navigation -->
 
+} else {
+    <div id="site-content">
+        <main class="main-content">
+            <div class="container">
+                <div class="page">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="slider">
+                                <ul class="slides">
+                                    <li><a asp-action="Login" asp-controller="Account"><img src="~/images/slide-1.jpeg.png" alt="Slide 1"></a></li>
+                                    <li><a asp-action="Login" asp-controller="Account"><img src="~/images/slide-2.jpg.png" alt="Slide 2"></a></li>
+                                    <li><a asp-action="Login" asp-controller="Account"><img src="~/images/slide-3.jpg.png" alt="Slide 3"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-12">
+                                    <div class="latest-movie">
+                                        <a asp-action="Login" asp-controller="Account"><img src="~/images/EvilEmpire.jpg" alt="Album 1"></a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-12">
+                                    <div class="latest-movie">
+                                        <a asp-action="Login" asp-controller="Account"><img src="~/images/Wovenwar.jpg" alt="Album 2"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- .row -->
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3">
+                            <div class="latest-movie">
+                                <a asp-action="Login" asp-controller="Account"><img src="~/images/DivisionBell.jpg" alt="Album 3"></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="latest-movie">
+                                <a asp-action="Login" asp-controller="Account"><img src="~/images/ScreamBloodyGore.jpg" alt="Album 4"></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="latest-movie">
+                                <a asp-action="Login" asp-controller="Account"><img src="~/images/OnceMoreRoundTheSun.jpg" alt="Album 5"></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="latest-movie">
+                                <a asp-action="Login" asp-controller="Account"><img src="~/images/LowTeens.jpg" alt="Album 6"></a>
+                            </div>
+                        </div>
+                    </div> <!-- .row -->
+                </div>
+            </div> <!-- .container -->
+        </main>
 
-    @*<script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/app.js"></script>*@
+    </div>
+
+}

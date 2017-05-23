@@ -23,7 +23,7 @@
 <body>
     <header class="site-header">
         <div class="container">
-            <a href="#" id="branding">
+            <a asp-action="Index" asp-controller="Home" id="branding">
                 <img src="~/images/Music-icon.png" alt="" class="logo" width="42" height="42" >
                 <div class="logo-copy">
                     <h1 class="site-title">Test</h1>
@@ -37,8 +37,9 @@
                     <li class="menu-item"><a asp-action="About" asp-controller="Home">About</a></li>
                     
                     <li class="menu-item"><a asp-action="Contact" asp-controller="Home">Contact</a></li>
-                    @await Html.PartialAsync("_LoginPartial")
-                </ul> <!-- .menu -->
+                    
+                </ul> 
+               @await Html.PartialAsync("_LoginPartial")<!-- .menu -->
                 <!--<form action="#" class="search-form">
                     <input type="text" placeholder="Search...">
                     <button><i class="fa fa-search"></i></button>
@@ -68,8 +69,8 @@
                         <div class="widget">
                             <h3 class="widget-title">Join Us</h3>
                             <ul class="no-bullet">
-                                <li><a asp-action="SignIn" asp-controller="Home">Sign In</a></li>
-                                <li><a asp-action="SignUp" asp-controller="Home">Sign Up</a></li>
+                                <li><a asp-action="Login" asp-controller="Account">Sign In</a></li>
+                                <li><a asp-action="Register" asp-controller="Account">Sign Up</a></li>
                             </ul>
                         </div>
                     </div>
