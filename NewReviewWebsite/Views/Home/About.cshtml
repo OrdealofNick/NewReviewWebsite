@@ -1,7 +1,97 @@
 ﻿@{
-    ViewData["Title"] = "About";
-}
-<h2>@ViewData["Title"].</h2>
-<h3>@ViewData["Message"]</h3>
+    ViewData["Title"] = "About - MUSIC REVIEWS";
+}  
 
-<p>Use this area to provide additional information.</p>
+<main class="main-content">
+    <div class="container">
+        <div class="page">
+            <div class="breadcrumbs">
+                <a asp-action="Index" asp-controller="Home">Home</a>
+                <span>About us</span>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <figure><img src="~/images/recordplayerphoto.png" alt="figure image"></figure>
+                </div>
+                <div class="col-md-8">
+                    <p class="leading">Music reviews by people just like you.</p>
+                    <p>Initially a class project, this review website is created by the team of Nathan White and Nicholas Gaudet, the two attending the Advanced Web Development &amp Programming class at Oulton College. Fueled by the passion of music and web design, we deided to merge the two to form what is PLACEHOLDER.</p>
+                    <p>Buying music is a crucial aspect in supporting your favorite bands and artists, but the practice can grow costly, especially when it comes to physical format such as CD, LP or even cassette (or the god-awful 8-tracks). This website is designed to keep your purchases consistent in quality and ensure that you possess only the greatest albums there are, or the ones that interest you the most.</p>
+                    <p>Discover your newly-found band's best records or discover new ones; PLACEHOLDER are here to expand the horizons of your music tastes and the growth of your collection.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="section-title">Vision &amp; Misssion</h2>
+                    <p>Our vision is to help the community to help broaden their tastes in music. With our reviews, we hope to influence the readers to turn their heads towards certain albums, or perhaps to keep away from them, and visit the groups that we share on our website.</p>
+                    
+                </div>
+                @*<div class="col-md-3">
+                    <h2 class="section-title">Useful Links</h2>
+                    <ul class="arrow">
+                        <li><a href="#">Eiusmod tempor incididunt</a></li>
+                        <li><a href="#">Tenim ad minim venia</a></li>
+                        <li><a href="#">Quis nostrud exercitation</a></li>
+                        <li><a href="#">Ullamco laboris reprehenderit</a></li>
+                        <li><a href="#">Duis aute dolor voluptat</a></li>
+                        <li><a href="#">Velit esse cillum dolore</a></li>
+                        <li><a href="#">Excepteur sint occaeca</a></li>
+                    </ul>
+                </div>*@
+            </div> <!-- .row -->
+
+            <h2 class="section-title">Our Team</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="team">
+                        <figure class="team-image"><img src="~/images/nicholasgaudet.jpg" alt="Nicholas Gaudet"></figure>
+                        <h2 class="team-name">Nicholas Gaudet</h2>
+                        <small class="team-title">Co-founder</small>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/OultonCollege/" class="facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="https://twitter.com/oultoncollege?lang=en" class="twitter"><i class="fa fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="team">
+                        <figure class="team-image"><img src="~/images/nathanwhite.png" alt="Nathan White"></figure>
+                        <h2 class="team-name">Nathan White</h2>
+                        <small class="team-title">Co-founder</small>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/OultonCollege/" class="facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="https://twitter.com/oultoncollege?lang=en" class="twitter"><i class="fa fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="col-md-3">
+                    <div class="team">
+                        <figure class="team-image"><img src="~/dummy/person-3.jpg" alt=""></figure>
+                        <h2 class="team-name">Jessica Branson</h2>
+                        <small class="team-title">Reviewer</small>
+                        <div class="social-links">
+                            <a href="" class="facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="" class="twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                            <a href="" class="pinterest"><i class="fa fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="team">
+                        <figure class="team-image"><img src="~/dummy/person-4.jpg" alt=""></figure>
+                        <h2 class="team-name">Sarah Stuart</h2>
+                        <small class="team-title">Consultant</small>
+                        <div class="social-links">
+                            <a href="" class="facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="" class="twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                            <a href="" class="pinterest"><i class="fa fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>*@
+
+            </div>
+        </div>
+    </div> <!-- .container -->
+</main>

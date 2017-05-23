@@ -1,54 +1,95 @@
 ﻿@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - NewReviewWebsite</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
 
-    <environment names="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-    </environment>
-    <environment names="Staging,Production">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
-    @Html.Raw(JavaScriptSnippet.FullScript)
+    <title>@ViewData["Title"]</title>
+    <!-- Loading third party fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+    <link href="~/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Loading main css file -->
+    <link href="~/style.css" rel="stylesheet" type="text/css" />
+
+    <!--[if lt IE 9]>
+    <script src="js/ie-support/html5.js"></script>
+    <script src="js/ie-support/respond.js"></script>
+    <![endif]-->
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <header class="site-header">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">NewReviewWebsite</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
-                @await Html.PartialAsync("_LoginPartial")
-            </div>
+            <a href="#" id="branding">
+                <img src="~/images/Music-icon.png" alt="" class="logo" width="42" height="42" >
+                <div class="logo-copy">
+                    <h1 class="site-title">Test</h1>
+                    <small class="site-description">Real Reviews. No Bullshit.</small>
+                </div>
+            </a> <!-- #branding -->
+            <div class="main-navigation">
+                <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+                <ul class="menu">
+                    <li class="menu-item "><a asp-action="Index" asp-controller="Home">Home</a></li>
+                    <li class="menu-item"><a asp-action="About" asp-controller="Home">About</a></li>
+                    
+                    <li class="menu-item"><a asp-action="Contact" asp-controller="Home">Contact</a></li>
+                    @await Html.PartialAsync("_LoginPartial")
+                </ul> <!-- .menu -->
+                <!--<form action="#" class="search-form">
+                    <input type="text" placeholder="Search...">
+                    <button><i class="fa fa-search"></i></button>
+                </form>-->
+            </div> <!-- .main-navigation -->
+            <div class="mobile-navigation"></div>
         </div>
-    </nav>
+    </header>
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; 2017 - NewReviewWebsite</p>
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="widget">
+                            <h3 class="widget-title">Recent Review</h3>
+                            <ul class="no-bullet">
+                                <li><a asp-action="ATrickOfTheTail" asp-controller="Home">A Trick of the Tail</a></li>
+                                <li><a asp-action="Hardwired" asp-controller="Home">Hardwired... To Self-Destruct</a></li>
+                                <li><a asp-action="ChildrenOfFire" asp-controller="Home">Children of Fire</a></li>
+                                <li><a asp-action="OnceMoreRoundTheSun" asp-controller="Home">Once More 'Round the Sun</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="widget">
+                            <h3 class="widget-title">Join Us</h3>
+                            <ul class="no-bullet">
+                                <li><a asp-action="SignIn" asp-controller="Home">Sign In</a></li>
+                                <li><a asp-action="SignUp" asp-controller="Home">Sign Up</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="widget">
+                            <h3 class="widget-title">Social Media</h3>
+                            <ul class="no-bullet">
+                                <li><a href="https://www.facebook.com/OultonCollege/">Facebook</a></li>
+                                <li><a href="https://twitter.com/oultoncollege?lang=en">Twitter</a></li>
+                                <li><a href="https://plus.google.com/+OultonCollegeMoncton">Google+</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> <!-- .row -->
+                <div class="colophon">Copyright &copy; @DateTime.Now.Year  -  Placeholder</div>
+            </div> <!-- .container -->
         </footer>
     </div>
 
-    <environment names="Development">
+    @*<environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
@@ -67,8 +108,14 @@
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
-
+    </environment>*@
+    @*<script src="~/js/jquery-1.11.1.min.js" asp-append-version="true"></script>
+    <script src="~/js/plugins.js" asp-append-version="true"></script>
+    <script src="~/js/site.min.js" asp-append-version="true"></script>
+    <script src="~/js/app.js"></script>*@
+    <script src="~/js/jquery-1.11.1.min.js"></script>
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/app.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

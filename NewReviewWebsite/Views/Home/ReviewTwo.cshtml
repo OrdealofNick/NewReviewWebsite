@@ -1,0 +1,82 @@
+@{
+    ViewData["Title"] = "Reviews - MUSIC REVIEWS";
+}  
+
+<main class="main-content">
+    <div class="container">
+        <div class="page">
+            <div class="breadcrumbs">
+                <a asp-action="Index" asp-controller="Home">Home</a>
+                <span>Music Review</span>
+            </div>
+            <div class="pagination-top">
+                <a asp-action="Review" asp-controller="Home" class="page-number prev"><i class="fa fa-angle-left"></i></a>
+                <a asp-action="Review" asp-controller="Home" class="page-number ">1</a>
+                <span class="page-number current">2</span>
+                <a asp-action="ReviewThree" asp-controller="Home" class="page-number">3</a>
+                @*<a href="#" class="page-number">4</a>
+            <a href="#" class="page-number">5</a>*@
+                <a asp-action="ReviewThree" asp-controller="Home" class="page-number next"><i class="fa fa-angle-right"></i></a>
+            </div>
+            @*<div class="filters">
+                <select name="#" id="#" placeholder="Choose Category">
+                    <option value="#">Rock &amp; Pop</option>
+                    <option value="#">Metal</option>
+                    <option value="#">Punk</option>
+                    <option value="#">Hip Hop</option>
+                    <option value="#">Alternative</option>
+                </select>*@
+            </div>
+            <div class="movie-list">
+                <div class="movie">
+                    <figure class="movie-poster"><img src="~/images/EvilEmpire.jpg" alt="#"></figure>
+                    <div class="movie-title"><a asp-action="EvilEmpire" asp-controller="Home">Rage Against the Machine <br /><b>Evil Empire</b></a></div>
+                    <p>Sed ut perspiciatis unde omnis iste natus error voluptatem doloremque.</p>
+                </div>
+                <div class="movie">
+                    <figure class="movie-poster"><img src="~/images/HardWiredCover.jpeg" alt="#"></figure>
+                    <div class="movie-title"><a asp-action="Hardwired" asp-controller="Home">Metallica <br /><b>Hardwired... To Self-Destruct</b></a></div>
+                    <p><em>8/10 - <b>Great</b></em></p>
+                </div>
+                <div class="movie">
+                    <figure class="movie-poster"><img src="~/images/FromMarsToSirus.jpg" alt="#"></figure>
+                    <div class="movie-title"><a asp-action="FromMarsToSirus" asp-controller="Home">Gojira <br /> <b>From Mars to Sirius</b></a></div>
+                    <p>Sed ut perspiciatis unde omnis iste natus error voluptatem doloremque.</p>
+                </div>
+                <div class="movie">
+                    <figure class="movie-poster"><img src="~/images/LambLiesDown.png" alt="#"></figure>
+                    <div class="movie-title"><a asp-action="LambLiesDown" asp-controller="Home">Genesis <br /> <b>The Lamb Lies Down On Broadway</b></a></div>
+                    <p><em>10/10 - <b>MASTERPIECE</b></em></p>
+                </div>
+                <div class="movie">
+                    <figure class="movie-poster"><img src="~/images/ImagesAndWords.jpg" alt="#"></figure>
+                    <div class="movie-title"><a asp-action="ImagesWords" asp-controller="Home">Dream Theater <br /><b>Images and Words</b></a></div>
+                    <p><em>10/10 - <b>MASTERPIECE</b></em></p>
+                </div>
+                <div class="movie">
+                    <figure class="movie-poster"><img src="~/images/Colors.jpg" alt="#"></figure>
+                    <div class="movie-title"><a asp-action="Colors" asp-controller="Home">Between the Buried and Me <br /><b>Colors</b></a></div>
+                    <p>Sed ut perspiciatis unde omnis iste natus error voluptatem doloremque.</p>
+                </div>
+                <div class="movie">
+                    <figure class="movie-poster"><img src="~/images/OnceMoreRoundTheSun.jpg" alt="#"></figure>
+                    <div class="movie-title"><a asp-action="OnceMoreRoundTheSun" asp-controller="Home">Mastodon <br /><b>Once More 'Round the Sun</b></a></div>
+                    <p>Sed ut perspiciatis unde omnis iste natus error voluptatem doloremque.</p>
+                </div>
+                <div class="movie">
+                    <figure class="movie-poster"><img src="~/images/Wovenwar.jpg" alt="#"></figure>
+                    <div class="movie-title"><a asp-action="Wovenwar" asp-controller="Home">Wovenwar <br /><b>Wovenwar</b></a></div>
+                    <p>Sed ut perspiciatis unde omnis iste natus error voluptatem doloremque.</p>
+                </div>
+            </div> <!-- .movie-list -->
+            <div class="pagination">
+                <a asp-action="Review" asp-controller="Home" class="page-number prev"><i class="fa fa-angle-left"></i></a>
+                <a asp-action="Review" asp-controller="Home" class="page-number ">1</a>
+                <span class="page-number current">2</span>
+                <a asp-action="ReviewThree" asp-controller="Home" class="page-number">3</a>
+                @*<a href="#" class="page-number">4</a>
+                <a href="#" class="page-number">5</a>*@
+                <a asp-action="ReviewThree" asp-controller="Home" class="page-number next"><i class="fa fa-angle-right"></i></a>
+            </div>
+    </div> <!-- .container -->
+</main>

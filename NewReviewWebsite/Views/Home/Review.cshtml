@@ -1,0 +1,84 @@
+@{
+    ViewData["Title"] = "Reviews - MUSIC REVIEWS";
+}  
+<main class="main-content">
+    <div class="container">
+        <div class="page">
+            <div class="breadcrumbs">
+                <a asp-action="Index" asp-controller="Home">Home</a>
+                <span>Music Review</span>
+
+            </div>
+            <div class="pagination-top">
+                <!--<a asp-action="Review" asp-controller="Home" class="page-number prev"><i class="fa fa-angle-left"></i></a>-->
+                <span class="page-number current">1</span>
+                <a asp-action="ReviewTwo" asp-controller="Home" class="page-number">2</a>
+                <a asp-action="ReviewThree" asp-controller="Home" class="page-number">3</a>
+                @*<a href="#" class="page-number">4</a>
+            <a href="#" class="page-number">5</a>*@
+                <a asp-action="ReviewTwo" asp-controller="Home" class="page-number next"><i class="fa fa-angle-right"></i></a>
+            </div>
+
+            @*<div class="filters">
+                <select name="#" id="#" placeholder="Choose Category">
+                    <option value="#">Rock &amp; Pop</option>
+                    <option value="#">Metal</option>
+                    <option value="#">Punk</option>
+                    <option value="#">Hip Hop</option>
+                    <option value="#">Alternative</option>
+                </select>*@
+            </div>
+
+            <div class="movie-list">
+                <div class="movie">
+                    <figure class="movie-poster"><img src="~/images/ChildrenOfFire.jpeg" alt="#"></figure>
+                    <div class="movie-title"><a asp-action="ChildrenOfFire" asp-controller="Home">Oh, Sleeper <br /><b>Children of Fire</b></a></div>
+                    <p>Sed ut perspiciatis unde omnis iste natus error voluptatem doloremque.</p>
+                </div>
+                <div class="movie">
+                    <figure class="movie-poster"><img src="~/images/TrickOfTheTail.jpg" alt="#"></figure>
+                    <div class="movie-title"><a asp-action="ATrickoftheTail" asp-controller="Home">Genesis <br /><b>Trick of the Tail</b></a></div>
+                    <p><em>9/10 - <b>Amazing</b></em></p>
+                </div>
+                <div class="movie">
+                    <figure class="movie-poster"><img src="~/images/AlongTheShadow.jpg" alt="#"></figure>
+                    <div class="movie-title"><a asp-action="AlongTheShadow" asp-controller="Home">Saosin <br /> <b>Along the Shadows</b></a></div>
+                    <p>Sed ut perspiciatis unde omnis iste natus error voluptatem doloremque.</p>
+                </div>
+                <div class="movie">
+                    <figure class="movie-poster"><img src="~/images/ScreamBloodyGore.jpg" alt="#"></figure>
+                    <div class="movie-title"><a asp-action="ScreamBloodyGore" asp-controller="Home">Death <br /> <b>Scream Bloody Gore</b></a></div>
+                    <p><em>8/10 - <b>Great</b></em></p>
+                </div>
+                <div class="movie">
+                    <figure class="movie-poster"><img src="~/images/TheAstonishing.jpg" alt="#"></figure>
+                    <div class="movie-title"><a asp-action="Astonishing" asp-controller="Home">Dream Theater <br /><b>The Astonishing</b></a></div>
+                    <p><em>10/10 - <b>MASTERPIECE</b></em></p>
+                </div>
+                <div class="movie">
+                    <figure class="movie-poster"><img src="~/images/LowTeens.jpg" alt="#"></figure>
+                    <div class="movie-title"><a asp-action="LowTeens" asp-controller="Home">Everytime I Die <br /><b>Low Teens</b></a></div>
+                    <p>Sed ut perspiciatis unde omnis iste natus error voluptatem doloremque.</p>
+                </div>
+                <div class="movie">
+                    <figure class="movie-poster"><img src="~/images/DivisionBell.jpg" alt="#"></figure>
+                    <div class="movie-title"><a asp-action="DivisionBell" asp-controller="Home">Pink Floyd <br /><b>The Division Bell</b></a></div>
+                    <p><em>7/10 - <b>Great</b></em></p>
+                </div>
+                <div class="movie">
+                    <figure class="movie-poster"><img src="~/images/LongColdWinter.jpg" alt="#"></figure>
+                    <div class="movie-title"><a asp-action="LongColdWinter" asp-controller="Home">Cinderella <br /><b>Long Cold Winter</b></a></div>
+                    <p>Sed ut perspiciatis unde omnis iste natus error voluptatem doloremque.</p>
+                </div>
+            </div> <!-- .movie-list -->
+            <div class="pagination">
+                <!--<a asp-action="Review" asp-controller="Home" class="page-number prev"><i class="fa fa-angle-left"></i></a>-->
+                <span class="page-number current">1</span>
+                <a asp-action="ReviewTwo" asp-controller="Home" class="page-number">2</a>
+                <a asp-action="ReviewThree" asp-controller="Home" class="page-number">3</a>
+                @*<a href="#" class="page-number">4</a>
+                <a href="#" class="page-number">5</a>*@
+                <a  asp-action="ReviewTwo" asp-controller="Home" class="page-number next"><i class="fa fa-angle-right"></i></a>
+            </div>
+    </div> <!-- .container -->
+</main>
