@@ -43,6 +43,9 @@ namespace NewReviewWebsite
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddDbContext<ReviewContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));//Context add by NIcholas Gaudet
+
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
